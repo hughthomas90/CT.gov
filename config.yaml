@@ -23,7 +23,7 @@ pubmed:
   # NCBI asks that larger applications include tool + email so they can contact you if needed.
   # Set these to something identifying (and an email you monitor).
   tool: "ctgov-trial-watch"
-  email: "your.email@example.com"
+  email: "example@gmail.com"
 
   # Polite throttling between PubMed API calls (seconds)
   # NCBI guidance: do not exceed ~3 requests/sec.
@@ -83,3 +83,20 @@ topics:
         weight: 6
       - keyword: "digital"
         weight: 4
+        
+  - name: "MASLD"
+    ctgov_params:
+      query.cond: "MASLD"
+      filter.overallStatus: "RECRUITING,ACTIVE_NOT_RECRUITING,COMPLETED"
+      sort: "LastUpdatePostDate:desc"
+      pageSize: 200
+      format: "json"
+    tag_keywords: ["MASLD", "NAFLD", "MASH", "NASH"]
+    interesting_keywords:
+      - keyword: "metabolic-dysfunction associated"
+        weight: 10
+      - keyword: "steatotic liver"
+        weight: 10
+      - keyword: "non-alcoholic"
+        weight: 10
+
