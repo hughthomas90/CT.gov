@@ -44,3 +44,9 @@ jobs:
       - name: Run ctgov-trial-watch (sync)
         run: |
           ctgov-trial-watch --config config.yaml --db data/trials.sqlite sync
+
+          - name: Verify CLI exists
+  run: |
+    which ctgov-trial-watch || true
+    python -m pip show ctgov-trial-watch || true
+    python -m pip list | grep -i ctgov || true
